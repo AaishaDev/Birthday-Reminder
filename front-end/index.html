@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script/index.js"></script>
+    <title>Birthday Reminder</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="./images/candle.png" alt="" />
+          <p>Reminder</p>
+        </div>
+        <button onclick="loginBtnClicked()" class="s-button">Login</button>
+      </nav>
+    </header>
+    <main>
+      <div class="hero">
+        <div class="left">
+          <div>
+            <p class="font-mono-one">
+              Never <br />
+              forget
+            </p>
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+          </div>
+          <p><span class="tilt">Bdays</span> of loved ones</p>
+          <div class="desktop">
+            <p>Sign Up to recieve reminders</p>
+            <button onclick="signUpBtnClicked()" class="l-button">
+              Sign Up
+            </button>
+          </div>
+        </div>
+        <div class="right">
+          <img src="./images/gifts.png" alt="" />
+          <div class="mb">
+            <p>Sign Up to recieve reminders</p>
+            <button onclick="signUpBtnClicked()" class="l-button">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="login-popup" data-signUp>
+        <div class="login-card">
+          <p class="hide" data-hide>X</p>
+          <p class="heading">Sign Up</p>
+          <form>
+            <div>
+              <img src="./images/avatar.svg" alt="" />
+              <input
+                type="text"
+                id="s-email"
+                required
+                placeholder="Email"
+                type="email"
+              />
+            </div>
+            <div>
+              <img src="./images/lock.svg" alt="" />
+              <input
+                type="password"
+                id="s-password"
+                required
+                placeholder="Password"
+                autocomplete="current-password"
+              />
+            </div>
+
+            <button
+              class="form-button"
+              onclick="handleSignUp(event)"
+              type="submit"
+            >
+              Submit
+            </button>
+            <p>
+              Already have an account?
+              <span onclick="toggleCard(event)">Login</span>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="login-popup" data-login>
+        <div class="login-card">
+          <p class="hide" data-hide>X</p>
+          <p class="heading">Login</p>
+          <form>
+            <div>
+              <img src="./images/avatar.svg" alt="" />
+              <input
+                type="email"
+                id="l-email"
+                required
+                placeholder="Email"
+                
+              />
+            </div>
+            <div>
+              <img src="./images/lock.svg" alt="" />
+              <input
+                type="password"
+                id="l-password"
+                required
+                placeholder="Password"
+                autocomplete="current-password"
+              />
+            </div>
+
+            <button
+              class="form-button"
+              onclick="handleLogin(event)"
+              type="submit"
+            >
+              Submit
+            </button>
+            <p>
+              Don't have an account?
+              <span onclick="toggleCard(event)">Sign Up</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+   
+  </body>
+</html>
