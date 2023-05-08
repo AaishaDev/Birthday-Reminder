@@ -14,7 +14,7 @@ if(refreshToken) window.location.href ="./main.html"
 onload()
 
 const  loginRequest =async(user)=>{
-  const res = await fetch("http://localhost:8000/auth", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/auth", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const handleSignUp = async (event) => {
   event.target.innerHTML = `<span class="loading material-symbols-rounded">
       cycle
       </span>`
-  const res = await fetch("http://localhost:8000/register", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -5,7 +5,7 @@ const tokenVerify = async () => {
   const refreshToken = localStorage.getItem("refreshToken");
 
   if (new Date().getTime() > expiryTime) {
-    const res = await fetch("http://localhost:8000/refresh", {
+    const res = await fetch("https://birthday-reminder-shdw.onrender.com/refresh", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${refreshToken}`,
@@ -31,7 +31,7 @@ const otpVerify = async () => {
     return;
   }
   const otpVal = otp.value;
-  const res = await fetch("http://localhost:8000/otpVerify", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/otpVerify", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const getBdays = async () => {
   const rightSection = document.getElementById("right");
 
   let token = localStorage.getItem("accessToken");
-  const res = await fetch("http://localhost:8000/reminder/getBdays", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/reminder/getBdays", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ const getBdays = async () => {
 const bdayList = async () => {
   const bdaySection = document.getElementById("bdays");
   let token = localStorage.getItem("accessToken");
-  const res = await fetch("http://localhost:8000/reminder/getBdays", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/reminder/getBdays", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -160,7 +160,7 @@ const onload = async () => {
   const accessToken = localStorage.getItem("accessToken");
   if (!accessToken) window.location.href = "./index.html";
 
-  const res = await fetch("http://localhost:8000/isEmailVerified", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/isEmailVerified", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -266,7 +266,7 @@ onload();
 const deleteBday = async (id) => {
   await tokenVerify();
   let token = localStorage.getItem("accessToken");
-  const res = await fetch(`http://localhost:8000/reminder/deleteBday/${id}`, {
+  const res = await fetch(`https://birthday-reminder-shdw.onrender.com/reminder/deleteBday/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -280,7 +280,7 @@ const deleteBday = async (id) => {
 const logoutBtnClicked = async () => {
   await tokenVerify();
   let token = localStorage.getItem("accessToken");
-  const res = await fetch("http://localhost:8000/logout", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/logout", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -310,7 +310,7 @@ const addReminder = async (event) => {
   event.target.innerHTML = `<span class="loading material-symbols-rounded">
       cycle
       </span>`;
-  const res = await fetch("http://localhost:8000/reminder/addReminder", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/addReminder", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
