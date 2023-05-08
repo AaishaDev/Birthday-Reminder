@@ -46,11 +46,11 @@ cron.schedule('24 21 * * *', () => {
 cron.schedule('00 16 * * *', () => {
   sendReminder()
 });
-cron.schedule('15 17 * * *', () => {
+cron.schedule('30 17 * * *', () => {
   sendReminder()
 });
 
-//Routes
+//Routes/
 app.get('/', (req, res) => {
   console.log("home route");
   res.send({ message: "You are on home route" });

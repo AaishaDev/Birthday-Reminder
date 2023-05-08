@@ -310,7 +310,7 @@ const addReminder = async (event) => {
   event.target.innerHTML = `<span class="loading material-symbols-rounded">
       cycle
       </span>`;
-  const res = await fetch("https://birthday-reminder-shdw.onrender.com/addReminder", {
+  const res = await fetch("https://birthday-reminder-shdw.onrender.com/reminder/addReminder", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

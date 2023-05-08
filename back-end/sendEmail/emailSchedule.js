@@ -27,6 +27,7 @@ const sendReminder = async () => {
   bdays.map(async (bday) => {
     
     const user = await User.findById(bday.user);
+    console.log("user", user)
     if(!user){
         console.log("no user to send email");
         return
