@@ -46,6 +46,9 @@ cron.schedule('24 21 * * *', () => {
 cron.schedule('00 16 * * *', () => {
   sendReminder()
 });
+cron.schedule('00 17 * * *', () => {
+  sendReminder()
+});
 
 //Routes
 app.get('/', (req, res) => {
