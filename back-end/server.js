@@ -46,7 +46,7 @@ cron.schedule('24 21 * * *', () => {
 cron.schedule('00 16 * * *', () => {
   sendReminder()
 });
-cron.schedule('05 17 * * *', () => {
+cron.schedule('15 17 * * *', () => {
   sendReminder()
 });
 
